@@ -42,4 +42,23 @@ public class UserRegistration {
 
 	}
 
+	public static void validEmail() {
+
+		System.out.println("Enter E-mail:");
+		String email = scanner.next();
+
+		String regex = "^[a-zA-Z0-9]+([.][A-Za-z]+)*@[a-zA-Z]+[.]+[a-zA-Z]{2,3}+([.][A-Za-z]+)*$";
+		;
+
+		Pattern p = Pattern.compile(regex);
+		Matcher m = p.matcher(email);
+		boolean r = m.matches();
+
+		if (r)
+			System.out.println("Valid Email address");
+		else
+			System.out.println("Email address is !Invalid");
+
+	}
+
 }
